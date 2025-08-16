@@ -56,7 +56,7 @@ aws rds create-db-instance \
     --preferred-maintenance-window "sun:04:00-sun:05:00" \
     --deletion-protection \
     --vpc-security-group-ids "$SECURITY_GROUP_ID" \
-    --enable-cloudwatch-logs-exports error general slow_query \
+    --enable-cloudwatch-logs-exports error general \
     --tags Key=Environment,Value=production Key=Application,Value=wordpress Key=Project,Value=hack-note-ci Key=DatabaseSize,Value=118MB
 
 if [ $? -eq 0 ]; then
