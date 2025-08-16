@@ -8,7 +8,7 @@ set -e
 # 設定
 RDS_IDENTIFIER="wordpress-production-db"
 ENGINE="mariadb"
-ENGINE_VERSION="10.6.14"
+ENGINE_VERSION="10.6.23"
 INSTANCE_CLASS="db.t3.micro"
 ALLOCATED_STORAGE="20"
 DB_NAME="bitnami_wordpress"
