@@ -51,7 +51,7 @@ mysqldump \
     --quick \
     --set-charset \
     --comments \
-    -u root -p \
+    -u bn_wordpress -p -h 127.0.0.1 \
     $DB_NAME > $BACKUP_FILE
 
 if [ $? -eq 0 ]; then

@@ -38,7 +38,7 @@ fi
 
 # データベースサイズ確認
 echo "=== Database Size Analysis ==="
-mysql -u root -p -e "
+mysql -u bn_wordpress -p -h 127.0.0.1 -e "
 SELECT 
     table_schema as 'Database',
     ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) as 'Size (MB)'
@@ -49,7 +49,7 @@ GROUP BY table_schema;
 
 echo ""
 echo "=== Table Information ==="
-mysql -u root -p -e "
+mysql -u bn_wordpress -p -h 127.0.0.1 -e "
 SELECT 
     table_name as 'Table',
     ROUND(((data_length + index_length) / 1024 / 1024), 2) as 'Size (MB)',
@@ -61,7 +61,7 @@ ORDER BY (data_length + index_length) DESC;
 
 echo ""
 echo "=== WordPress Posts Count ==="
-mysql -u root -p -D $DB_NAME -e "
+mysql -u bn_wordpress -p -h 127.0.0.1 -D $DB_NAME -e "
 SELECT 
     post_type,
     post_status,
@@ -73,7 +73,7 @@ ORDER BY count DESC;
 
 echo ""
 echo "=== WordPress Users Count ==="
-mysql -u root -p -D $DB_NAME -e "
+mysql -u bn_wordpress -p -h 127.0.0.1 -D $DB_NAME -e "
 SELECT COUNT(*) as total_users FROM wp_users;
 "
 

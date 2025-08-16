@@ -103,6 +103,9 @@ mysql -h <RDS_ENDPOINT> -u wpuser -p wordpress -e "SELECT COUNT(*) FROM wp_posts
 
 # ユーザー数確認
 mysql -h <RDS_ENDPOINT> -u wpuser -p wordpress -e "SELECT COUNT(*) FROM wp_users;"
+
+# ローカルDBとの比較確認
+mysql -u bn_wordpress -p -h 127.0.0.1 bitnami_wordpress -e "SELECT COUNT(*) FROM wp_posts WHERE post_status='publish';"
 ```
 
 ### ⚙️ WordPress設定更新
