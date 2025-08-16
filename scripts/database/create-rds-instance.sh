@@ -52,8 +52,8 @@ aws rds create-db-instance \
     --storage-type gp2 \
     --storage-encrypted \
     --backup-retention-period 7 \
-    --backup-window "03:00-04:00" \
-    --maintenance-window "sun:04:00-sun:05:00" \
+    --preferred-backup-window "03:00-04:00" \
+    --preferred-maintenance-window "sun:04:00-sun:05:00" \
     --deletion-protection \
     --vpc-security-group-ids "$SECURITY_GROUP_ID" \
     --enable-performance-insights \
